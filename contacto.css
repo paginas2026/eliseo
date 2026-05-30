@@ -1,0 +1,156 @@
+:root{
+    --amarillo:#FFD600;
+    --rojo:#dd0025;
+    --verde:#2E7D32;
+}
+
+/* GENERAL */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fffef7;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:#D90429 !important;
+    padding:20px 8%;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.logo-texto{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    margin-right:20px;
+}
+
+.navbar-brand,
+.nav-link{
+    color:white !important;
+    font-weight:bold;
+}
+
+.nav-link:hover{
+    color:var(--amarillo) !important;
+}
+
+.nav-link.active{
+    color:var(--amarillo) !important;
+}
+
+/* CONTACTO */
+
+.contacto{
+    background:var(--amarillo);
+    min-height:100vh;
+    padding:80px 8%;
+}
+
+.encabezado-contacto{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.etiqueta-contacto{
+    background:var(--rojo);
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.encabezado-contacto h2{
+    color:var(--rojo);
+    font-size:55px;
+    margin:25px 0;
+}
+
+.encabezado-contacto p{
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+}
+
+/* TARJETAS */
+
+.contacto-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.contacto-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+.contacto-card h3{
+    color:var(--rojo);
+    margin-bottom:15px;
+}
+
+.btn-contacto{
+    display:inline-block;
+    margin-top:15px;
+    background:var(--verde);
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* BENEFICIOS */
+
+.info-extra{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.info-extra h2{
+    color:var(--rojo);
+    margin-bottom:40px;
+}
+
+.beneficios-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.beneficio{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.beneficio h3{
+    color:var(--rojo);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .encabezado-contacto h2{
+        font-size:40px;
+    }
+
+    .contacto-grid,
+    .beneficios-grid{
+        grid-template-columns:1fr;
+    }
+
+}

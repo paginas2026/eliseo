@@ -1,0 +1,337 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --amarillo:#FFD600;
+    --rojo:#D90429;
+    --verde:#2E7D32;
+    --oscuro:#222222;
+    --blanco:#ffffff;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fffef7;
+    color:var(--oscuro);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    background:var(--rojo);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.15);
+}
+
+.logo-texto{
+    color:white;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.navbar-nav{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-link{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:var(--amarillo);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:var(--amarillo);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:80px 8%;
+}
+
+.hero-contenedor{
+    max-width:1400px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.hero-logo img{
+    width:500px;
+    max-width:100%;
+    border-radius:20px;
+}
+
+.hero-texto{
+    max-width:650px;
+}
+
+.etiqueta{
+    background:white;
+    color:var(--rojo);
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.hero-texto h1{
+    font-size:70px;
+    color:var(--rojo);
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.hero-texto p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.hero-botones{
+    margin-top:35px;
+}
+
+.btn-rojo{
+    background:var(--rojo);
+    color:white;
+    padding:15px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    display:inline-block;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-rojo:hover{
+    transform:translateY(-3px);
+}
+
+.btn-verde{
+    background:var(--verde);
+    color:white;
+    padding:15px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    display:inline-block;
+    margin-left:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-verde:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categorias-principales{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.categorias-principales h2{
+    font-size:50px;
+    color:var(--rojo);
+    margin-bottom:15px;
+}
+
+.categorias-principales p{
+    font-size:18px;
+}
+
+.grid-categorias{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.categoria-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.categoria-card:hover{
+    transform:translateY(-8px);
+}
+
+.emoji{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.categoria-card h3{
+    color:var(--rojo);
+    margin-bottom:10px;
+}
+
+/* =========================
+   BENEFICIOS
+========================= */
+
+.beneficios{
+    padding:100px 8%;
+    background:#fff8d7;
+    text-align:center;
+}
+
+.beneficios h2{
+    font-size:50px;
+    color:var(--rojo);
+    margin-bottom:50px;
+}
+
+.beneficios-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.beneficio{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.icono{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.beneficio h3{
+    color:var(--rojo);
+    margin-bottom:10px;
+}
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.estadisticas{
+    background:var(--amarillo);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+    padding:80px 8%;
+}
+
+.estadistica h2{
+    color:var(--rojo);
+    font-size:55px;
+}
+
+.estadistica p{
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* =========================
+   BANNER FINAL
+========================= */
+
+.banner-final{
+    background:var(--rojo);
+    color:white;
+    text-align:center;
+    padding:100px 8%;
+}
+
+.banner-final h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.banner-final p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .hero-contenedor{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-texto h1{
+        font-size:50px;
+    }
+
+    .estadisticas{
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .navbar-nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero-texto h1{
+        font-size:40px;
+    }
+
+    .estadisticas{
+        grid-template-columns:1fr;
+    }
+
+    .btn-rojo,
+    .btn-verde{
+        display:block;
+        margin:10px auto;
+    }
+
+}
