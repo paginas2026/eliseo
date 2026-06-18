@@ -9,6 +9,134 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<script>
+
+let carrito=[];
+
+function agregar(btn){
+
+let producto=
+btn.closest(".producto");
+
+let nombre=
+producto
+.querySelector("h3")
+.innerText;
+
+let cantidad=
+producto
+.querySelector(".cantidad")
+.value;
+
+let medida=
+producto
+.querySelector(".medida")
+.value;
+
+if(cantidad===""){
+
+alert(
+"Ingresá cantidad"
+);
+
+return;
+
+}
+
+carrito.push({
+
+nombre,
+
+cantidad,
+
+medida
+
+});
+
+mostrar();
+
+}
+
+function mostrar(){
+
+let lista=
+document
+.getElementById(
+"lista"
+);
+
+lista.innerHTML="";
+
+document
+.getElementById(
+"contador"
+)
+.innerHTML=
+carrito.length;
+
+carrito.forEach(p=>{
+
+lista.innerHTML+=
+
+`
+
+<div class="item">
+
+${p.nombre}
+
+<br>
+
+${p.cantidad}
+
+${p.medida}
+
+</div>
+
+`;
+
+});
+
+}
+
+function enviarPedido(){
+
+let cliente=
+document
+.getElementById(
+"cliente"
+).value;
+
+let mensaje=
+`NUEVO PEDIDO ELISEO CARNICERÍA%0A%0A`;
+
+mensaje+=
+`Cliente: ${cliente}%0A%0A`;
+
+carrito.forEach(p=>{
+
+mensaje+=
+
+`${p.nombre}
+
+-
+
+${p.cantidad}
+
+${p.medida}
+
+%0A`;
+
+});
+
+window.open(
+
+`https://wa.me/5493512221273?text=${mensaje}`
+
+);
+
+}
+
+</script>
 
 <body>
 
@@ -75,77 +203,501 @@
             <img src="WhatsApp Image 2026-05-30 at 19.20.43.jpeg" alt="Asado">
             <h3>🥩 Asado</h3>
             <p>Corte ideal para compartir en familia.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.20.44 (2).jpeg" alt="Vacío">
             <h3>🥩 Vacío</h3>
             <p>Carne tierna y sabrosa.</p>
+ 
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.18.59.jpeg" alt="Milanesas">
             <h3>🍖 Milanesas</h3>
             <p>Listas para cocinar.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.19.00.jpeg" alt="Carne Molida">
             <h3>🥩 Carne Molida</h3>
             <p>Ideal para múltiples preparaciones.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.20.44.jpeg" alt="Pollo">
             <h3>🍗 Pollo Entero</h3>
             <p>Fresco y seleccionado.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.20.45.jpeg" alt="Pata Muslo">
             <h3>🍗 Pata Muslo</h3>
             <p>Excelente calidad.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.19.01.jpeg" alt="Alitas">
             <h3>🍗 Alitas</h3>
             <p>Perfectas para reuniones.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.19.00 (1).jpeg" alt="Hamburguesas">
             <h3>🍔 Hamburguesas</h3>
             <p>Prácticas y deliciosas.</p>
+  
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.20.44 (1).jpeg" alt="Papas">
             <h3>🍟 Papas Congeladas</h3>
             <p>Listas para freír.</p>
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.20.45 (1).jpeg" alt="Nuggets">
             <h3>🍗 Nuggets</h3>
             <p>Favoritos de los más chicos.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.19.00 (3).jpeg" alt="Pre-Pizzas">
             <h3>🍕 Pre-pizzas</h3>
             <p>Rápidas y prácticas.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.19.00 (2).jpeg" alt="Pollo Trozado">
             <h3>🍗 Pollo trozado</h3>
             <p>Diferentes sabores para elegir.</p>
+
+
+<div class="acciones">
+
+<input
+type="number"
+min="1"
+step="0.5"
+placeholder="Cantidad"
+class="cantidad">
+
+<select class="medida">
+
+<option value="kg">
+Kg
+</option>
+
+<option value="unidad">
+Unidad
+</option>
+
+</select>
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
     </div>
 
 </section>
+<div class="carrito">
+
+<div class="carrito-header">
+
+<h3>
+🛒 Pedido
+</h3>
+
+<span id="contador">
+0
+</span>
+
+</div>
+
+<div id="lista"></div>
+
+<input
+id="cliente"
+placeholder="Nombre del cliente">
+
+<button
+class="enviar"
+onclick="enviarPedido()">
+
+Enviar pedido
+
+</button>
+
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

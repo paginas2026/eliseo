@@ -6,6 +6,154 @@
     <link rel="stylesheet" href="verduleria.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<script>
+
+let carrito=[];
+
+function agregar(btn){
+
+let tarjeta=
+btn.closest(".producto");
+
+let nombre=
+tarjeta
+.querySelector("h3")
+.innerText;
+
+let cantidad=
+tarjeta
+.querySelector(".cantidad")
+.value;
+
+if(cantidad===""){
+
+alert(
+"Ingresá Kg"
+);
+
+return;
+
+}
+
+carrito.push({
+
+nombre:nombre,
+
+cantidad:cantidad
+
+});
+
+dibujar();
+
+}
+
+function dibujar(){
+
+let lista=
+document
+.getElementById(
+"lista"
+);
+
+let contador=
+document
+.getElementById(
+"contador"
+);
+
+lista.innerHTML="";
+
+carrito.forEach(p=>{
+
+lista.innerHTML+=
+
+`
+
+<div class="item">
+
+<strong>
+
+${p.nombre}
+
+</strong>
+
+<br>
+
+⚖️ ${p.cantidad} Kg
+
+</div>
+
+`;
+
+});
+
+contador.innerHTML=
+carrito.length;
+
+}
+
+function enviarPedido(){
+
+if(
+carrito.length===0
+){
+
+alert(
+"El carrito está vacío"
+);
+
+return;
+
+}
+
+let cliente=
+document
+.getElementById(
+"cliente"
+).value;
+
+if(cliente===""){
+
+alert(
+"Ingresá nombre"
+);
+
+return;
+
+}
+
+let mensaje=
+"NUEVO PEDIDO ELISEO VERDULERÍA%0A%0A";
+
+mensaje+=
+"Cliente: "
++cliente+
+"%0A%0A";
+
+carrito.forEach(p=>{
+
+mensaje+=
+
+p.nombre+
+
+" - "+
+
+p.cantidad+
+
+" Kg%0A";
+
+});
+
+window.open(
+
+"https://wa.me/5493512221273?text="+mensaje
+
+);
+
+}
+
+</script>
+
 <body>
     
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -43,6 +191,24 @@
             Seleccionamos frutas y verduras frescas para ofrecer calidad,
             sabor y variedad para toda la familia.
         </p>
+<div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
 
     </div>
 
@@ -52,98 +218,435 @@
             <img src="WhatsApp Image 2026-05-30 at 18.21.02 (1).jpeg" alt="Manzana">
             <h3>🍎 Manzana Roja</h3>
             <p>Fruta fresca y seleccionada.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.01.jpeg" alt="Banana">
             <h3>🍌 Banana</h3>
             <p>Ideal para toda la familia.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.03.jpeg" alt="Naranja">
             <h3>🍊 Naranja</h3>
             <p>Perfecta para jugos.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.02 (3).jpeg" alt=""Mandarina">
             <h3>🍊 Mandarina</h3>
             <p>Dulce y fresca.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.04.jpeg" alt="Pera">
             <h3>🍐 Pera</h3>
             <p>Calidad premium.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.02.jpeg" alt="Durazno">
             <h3>🍑 Durazno</h3>
             <p>Seleccionado diariamente.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.03 (1).jpeg" alt="Tomate">
             <h3>🍅 Tomate</h3>
             <p>Ideal para ensaladas.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.04 (1).jpeg" alt="Lechuga">
             <h3>🥬 Lechuga</h3>
             <p>Recién llegada.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.04 (2).jpeg" alt="Zanahoria">
             <h3>🥕 Zanahoria</h3>
             <p>Fresca y seleccionada.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.06.32.jpeg" alt="Cebolla">
             <h3>🧅 Cebolla</h3>
             <p>Excelente calidad.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.06.33.jpeg" alt="Papa">
             <h3>🥔 Papa</h3>
             <p>Ideal para múltiples comidas.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.06.32 (1).jpeg" alt="Limón">
             <h3>🍋 Limón</h3>
             <p>Perfecto para bebidas y comidas.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 18.21.04 (3).jpeg" alt="Pimiento">
             <h3>🫑 Pimiento</h3>
             <p>Perfecto para gusto y sabor.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
 
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.05.16.jpeg" alt="Ajo">
             <h3>🧄 Ajo</h3>
             <p>Perfecto para dar un toque único de sabor.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.05.16 (1).jpeg" alt="Uva">
             <h3>🍇 Uva</h3>
             <p>Perfecto para comer algo dulce y refrescante.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
         <div class="producto">
             <img src="WhatsApp Image 2026-05-30 at 19.05.17.jpeg" alt="Ciruela">
             <h3>🟣 Ciruela</h3>
             <p>Perfecto para disfrutar de su dulzura natural.</p>
+            <div class="acciones">
+
+<input
+type="number"
+min="0.5"
+step="0.5"
+placeholder="Kg"
+class="cantidad">
+
+<button
+class="btn-agregar"
+onclick="agregar(this)">
+
+Agregar
+
+</button>
+
+</div>
+
         </div>
     </div>
 
 </section>
+<div class="carrito">
+
+<div class="carrito-header">
+
+<h3>
+🛒 Tu Pedido
+</h3>
+
+<span id="contador">
+0
+</span>
+
+</div>
+
+<div id="lista"></div>
+
+<input
+type="text"
+id="cliente"
+placeholder="Nombre del cliente">
+
+<button
+class="enviar"
+onclick="enviarPedido()">
+
+Enviar pedido
+
+</button>
+
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
